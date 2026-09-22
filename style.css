@@ -344,6 +344,7 @@ section:nth-child(even) {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  object-position: center 20%; /* Ajusta este porcentaje (20%) para mover la foto arriba o abajo */
 }
 
 
