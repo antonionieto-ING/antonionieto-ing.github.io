@@ -22,17 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navbar Scroll Effect ---
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
-        if (currentScroll <= 0) {
-            navbar.style.boxShadow = 'none';
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            navbar.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
     });
 });
