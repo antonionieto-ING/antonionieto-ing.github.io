@@ -3,163 +3,419 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antonio Nieto | CV & Portfolio</title>
-  <meta name="description" content="Currículum web de Antonio Nieto, Ingeniero Informático y Desarrollador de Software.">
+  <title>Antonio Rafael Nieto Mora | Ingeniero Informático</title>
+  <meta name="description" content="Portfolio y currículum de Antonio Rafael Nieto Mora. Desarrollador de Software e Ingeniero Informático.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
+      --bg: #0b0f19;
+      --surface: #111827;
+      --surface-hover: #1f2937;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
       --accent: #38bdf8;
-      --border: #334155;
-      --tag-bg: #0369a1;
-      --tag-text: #e0f2fe;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --tag-bg: #1e293b;
+      --tag-text: #7dd3fc;
+      --font-code: 'JetBrains Mono', monospace;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding: 3rem 1rem;
+      padding: 3rem 1.25rem;
     }
+
     .container {
-      max-width: 820px;
+      max-width: 900px;
       margin: 0 auto;
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-      border: 1px solid var(--border);
     }
+
+    /* HEADER */
     header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
       margin-bottom: 2rem;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
     }
-    h1 { font-size: 2.4rem; color: #ffffff; letter-spacing: -0.5px; }
-    .subtitle { font-size: 1.15rem; color: var(--accent); font-weight: 500; margin-top: 0.25rem; }
-    .contact-links {
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-family: var(--font-code);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 1.2rem;
-      margin-top: 1rem;
-    }
-    .contact-links a {
+      font-size: 0.9rem;
       color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .contact-grid a {
+      color: var(--text);
       text-decoration: none;
-      font-size: 0.95rem;
       transition: color 0.2s;
     }
-    .contact-links a:hover { color: var(--accent); }
-    section { margin-bottom: 2.5rem; }
+
+    .contact-grid a:hover { color: var(--accent); }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0f19;
+    }
+
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: var(--surface-hover);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { border-color: var(--accent); }
+
+    /* SECTIONS */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
     h2 {
       font-size: 1.35rem;
-      color: var(--accent);
+      font-weight: 600;
+      color: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .item { margin-bottom: 1.75rem; }
-    .item-header {
+
+    /* CARDS */
+    .card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: rgba(56, 189, 248, 0.4); }
+
+    .card-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-weight: 600;
-      font-size: 1.05rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
     }
-    .company { color: var(--muted); font-size: 0.95rem; margin-top: 0.1rem; }
-    .date { color: var(--muted); font-size: 0.85rem; font-weight: normal; }
-    .item p { margin-top: 0.4rem; color: #cbd5e1; font-size: 0.95rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .card-subtitle {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-date {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-family: var(--font-code);
+    }
+
+    p { color: #d1d5db; font-size: 0.95rem; line-height: 1.65; }
+
+    /* TAGS */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
     .tag {
       background: var(--tag-bg);
       color: var(--tag-text);
-      padding: 0.2rem 0.65rem;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(56, 189, 248, 0.1);
     }
-    .btn-pdf {
-      display: inline-block;
-      margin-top: 1.25rem;
-      background: var(--accent);
-      color: #0f172a !important;
-      font-weight: 600;
-      padding: 0.55rem 1.1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: opacity 0.2s;
+
+    /* GRID SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
     }
-    .btn-pdf:hover { opacity: 0.9; }
+
+    .skill-block {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .skill-block h3 {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .skill-block p {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 3rem;
+      padding-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <!-- HEADER / PERFIL -->
     <header>
-      <h1>Antonio Nieto</h1>
-      <p class="subtitle">Ingeniero Informático | Software Developer</p>
-      <div class="contact-links">
-        <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a>
-        <a href="https://github.com/antonionietoINF" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+      <span class="badge">Ingeniería del Software & Cloud</span>
+      <h1>Antonio Rafael Nieto Mora</h1>
+      <p class="subtitle">Ingeniero Informático & Full Stack Developer</p>
+      
+      <p>
+        Especializado en Ingeniería del Software y Tecnologías de la Información. Apasionado por la creación de soluciones eficientes, arquitectura en la nube y el desarrollo ágil de software escalable.
+      </p>
+
+      <div class="contact-grid">
+        <span>📍 Almería, España</span>
+        <a href="mailto:anieto436436@gmail.com">✉️ anieto436436@gmail.com</a>
+        <a href="tel:+34674814809">📞 +34 674 81 48 09</a>
+        <a href="https://github.com/antonionietoINF" target="_blank">💻 GitHub</a>
       </div>
-      <a href="cv.pdf" download class="btn-pdf">📄 Descargar CV en PDF</a>
+
+      <div class="header-actions">
+        <a href="cv.pdf" download class="btn btn-primary">Descargar CV (PDF)</a>
+        <a href="https://github.com/antonionietoINF" target="_blank" class="btn btn-secondary">Explorar Repositorios</a>
+      </div>
     </header>
 
+    <!-- PROYECTOS DESTACADOS -->
     <section>
-      <h2>Sobre mí</h2>
-      <p>
-        Graduado en Ingeniería Informática enfocado en el desarrollo de software y aplicaciones web. 
-        Experiencia práctica en el desarrollo frontend y backend, bases de datos, despliegues y automatización de procesos.
-      </p>
-    </section>
+      <h2>Proyectos & Trabajo Fin de Grado</h2>
 
-    <section>
-      <h2>Experiencia</h2>
-      <div class="item">
-        <div class="item-header">
-          <span>Desarrollador de Software & Web</span>
-          <span class="date">2024 — Presente</span>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Simulador web de tráfico aéreo sobre mapa interactivo</span>
+          <span class="card-date">TFG Principal</span>
         </div>
-        <div class="company">Desarrollo Web & Integración de Sistemas</div>
-        <p>Implementación y mantenimiento de soluciones digitales, automatización de flujos y consumo de APIs.</p>
+        <div class="card-subtitle"><a href="http://traficoaereo.es" target="_blank" style="color: inherit; text-decoration: none;">traficoaereo.es ↗</a></div>
+        <p>
+          Plataforma web para la simulación y gestión de tráfico aéreo sobre mapas dinámicos interactivos. 
+          Implementación de algoritmos de teoría de grafos (<strong>Dijkstra, A*, Kruskal y Prim</strong>) aplicados a coordenadas reales para el cálculo de rutas óptimas y análisis de conectividad de red.
+        </p>
         <div class="tags">
-          <span class="tag">JavaScript / TypeScript</span>
-          <span class="tag">APIs REST</span>
-          <span class="tag">Docker</span>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Proyectos Destacados</h2>
-      <div class="item">
-        <div class="item-header">
-          <span>Plataforma Web / Simulador Interactivo</span>
-          <span class="date"><a href="https://github.com/antonionietoINF" target="_blank" style="color: var(--accent); text-decoration: none;">Ver repositorio</a></span>
-        </div>
-        <p>Arquitectura cliente-servidor con renderizado de datos dinámicos y despliegue contenerizado.</p>
-        <div class="tags">
-          <span class="tag">Angular / React</span>
+          <span class="tag">Angular</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Leaflet</span>
           <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Prisma ORM</span>
           <span class="tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Automatización, Pruebas y Despliegue Cloud</span>
+          <span class="card-date">Complemento TFG</span>
+        </div>
+        <div class="card-subtitle">Entorno de Producción & CI/CD</div>
+        <p>
+          Profesionalización integral del simulador mediante arquitectura de integración continua y despliegue continuo (CI/CD).
+          Automatización de pruebas unitarias y pruebas End-to-End (E2E), auditorías de calidad de código con análisis estático y orquestación con contenedores en servidor cloud bajo proxy inverso.
+        </p>
+        <div class="tags">
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Vitest</span>
+          <span class="tag">Selenium</span>
+          <span class="tag">SonarCloud</span>
+          <span class="tag">Docker Compose</span>
+          <span class="tag">Microsoft Azure</span>
+          <span class="tag">Caddy Server</span>
         </div>
       </div>
     </section>
 
+    <!-- EXPERIENCIA LABORAL -->
     <section>
-      <h2>Habilidades Técnicas</h2>
-      <div class="tags">
-        <span class="tag">Angular / React</span>
-        <span class="tag">TypeScript / JavaScript</span>
-        <span class="tag">Node.js / Python</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Git</span>
-        <span class="tag">SQL</span>
+      <h2>Experiencia Profesional</h2>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Desarrollador & Becario Tecnológico</span>
+          <span class="card-date">Feb 2026 — Sep 2026</span>
+        </div>
+        <div class="card-subtitle">Factorydea</div>
+        <p>
+          Perfil polivalente enfocado en desarrollo de software, automatización de sistemas y soluciones digitales:
+        </p>
+        <p style="margin-top: 0.5rem;">
+          • Desarrollo web con WordPress a medida, auditorías técnicas de SEO y revisiones de ciberseguridad.<br>
+          • Automatización de flujos y procesos empresariales mediante <strong>n8n</strong> e implantación de <strong>Odoo ERP/CRM</strong>.<br>
+          • Desarrollo e integración desde cero de un <strong>chatbot omnicanal</strong> para la captación automatizada de leads.<br>
+          • Gestión y soporte de justificaciones técnicas para proyectos del Kit Digital.
+        </p>
+        <div class="tags">
+          <span class="tag">n8n</span>
+          <span class="tag">Odoo ERP</span>
+          <span class="tag">Chatbots</span>
+          <span class="tag">Web Scraping</span>
+          <span class="tag">APIs HTTP</span>
+          <span class="tag">WordPress</span>
+        </div>
       </div>
     </section>
+
+    <!-- CONOCIMIENTOS TÉCNICOS -->
+    <section>
+      <h2>Stack & Habilidades Técnicas</h2>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h3>Frontend & UI</h3>
+          <p>Angular, TypeScript, Leaflet (Mapas Interactivos), WordPress (Elementor, Astra), HTML5/CSS3.</p>
+        </div>
+        <div class="skill-block">
+          <h3>Backend & BBDD</h3>
+          <p>Node.js, Express, PostgreSQL, Prisma ORM, Procesamiento y parseo de archivos CSV/JSON.</p>
+        </div>
+        <div class="skill-block">
+          <h3>DevOps & Cloud</h3>
+          <p>Docker, Docker Compose, Microsoft Azure, GitHub Actions (CI/CD), Caddy Server (Proxy Inverso/HTTPS).</p>
+        </div>
+        <div class="skill-block">
+          <h3>Testing & Calidad</h3>
+          <p>Vitest (Unit testing), Selenium (E2E testing), SonarCloud (análisis estático), Prettier.</p>
+        </div>
+        <div class="skill-block">
+          <h3>Automatización & ERP</h3>
+          <p>n8n, Odoo ERP/CRM, Integraciones Webhook/HTTP, Web Scraping, Creación de Chatbots omnicanal.</p>
+        </div>
+        <div class="skill-block">
+          <h3>Auditoría & Metodologías</h3>
+          <p>Ciberseguridad básica, SEO técnico, Accesibilidad web, Scrum, Kanban, XP.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section>
+      <h2>Formación Académica</h2>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Grado en Ingeniería Informática</span>
+          <span class="card-date">2022 — 2026</span>
+        </div>
+        <div class="card-subtitle">Universidad de Almería (UAL)</div>
+        <p>Mención en Ingeniería del Software y Tecnologías de la Información.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Enseñanzas Profesionales de Música — Especialidad Guitarra</span>
+          <span class="card-date">2012 — 2022</span>
+        </div>
+        <div class="card-subtitle">Conservatorio Profesional de Música "Maestro Chicano Muñoz"</div>
+        <p>Título de Técnico en Enseñanzas Artísticas.</p>
+      </div>
+    </section>
+
+    <!-- IDIOMAS & DATOS -->
+    <section>
+      <h2>Idiomas & Datos Adicionales</h2>
+      <p>• <strong>Español:</strong> Nativo</p>
+      <p>• <strong>Inglés:</strong> B1 acreditado (Preparando nivel B2)</p>
+      <p style="margin-top: 0.5rem; color: var(--muted);">• Permiso de conducir B con vehículo propio y disponibilidad para viajar.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 Antonio Rafael Nieto Mora — Desplegado con GitHub Pages</p>
+    </footer>
+
   </div>
 </body>
 </html>
