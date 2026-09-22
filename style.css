@@ -380,7 +380,6 @@ section:nth-child(even) {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -403,6 +402,7 @@ section:nth-child(even) {
   background: rgba(255, 255, 255, 0.05);
   padding: 0.25rem 0.75rem;
   border-radius: 99px;
+  white-space: nowrap;
 }
 
 .tags {
